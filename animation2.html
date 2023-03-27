@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation2</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        .box {
+            width:200px; height:200px;
+            background:aqua;
+            animation:right300 1s ease both;
+            border-radius:50%;
+        }
+        .box:nth-child(2) {animation:right300 2s ease infinite;}
+        .box:nth-child(3) {animation:right300 2s ease infinite alternate;}
+        .box:nth-child(4) {animation:right300 2s ease infinite reverse;}
+        .box:nth-child(5) {animation:right300 2s ease infinite both;}
+        /* @keyframes */
+        /* 왼쪽에서 오른쪽으로 300px 이동 */
+        @keyframes right300 {
+            0% {transform:translate(0) rotate(0deg)}
+            100% {transform:translateX(300px) rotate(360deg)}
+        }
+        @keyframes bottom500 {
+            0% {opacity:0; transform:translate(500px) skew()}
+            100% {opacity:1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+</body>
+</html>
